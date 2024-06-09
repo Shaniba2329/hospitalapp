@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import Addpatient from './components/Addpatient';
+import Searchpatient from './components/Searchpatient';
+import Deletepatient from './components/Deletepatient';
+import Viewallpatient from './components/Viewallpatient';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Addpatient/>}/>
+        <Route path='/search' element={<Searchpatient/>}/>
+        <Route path='/delete' element={<Deletepatient/>}/>
+        <Route path='/viewall' element={<Viewallpatient/>}/>
+      </Routes>
+      </BrowserRouter>
   );
 }
 
